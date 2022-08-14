@@ -1,0 +1,1 @@
+export const asdad= "<div>{{id}}<li>{{doesWhat}}</li></div>"
