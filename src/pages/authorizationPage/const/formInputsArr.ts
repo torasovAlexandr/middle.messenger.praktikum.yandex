@@ -1,4 +1,5 @@
-import {input} from '../types/templateTypes';
+import {input} from '../../../types/templateTypes';
+
 
 export const loginFields:input[]=[
   {name: 'login', type: 'text', label: 'Логин'},

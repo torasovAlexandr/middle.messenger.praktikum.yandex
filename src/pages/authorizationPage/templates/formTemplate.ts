@@ -1,5 +1,5 @@
-import {input} from '../types/templateTypes';
 import styles from '/src/pages/authorizationPage/authtorization.module.scss';
+import {input} from '../../../types/templateTypes';
 
 export const formTemplate = (inputs: input[]) => {
   return `
