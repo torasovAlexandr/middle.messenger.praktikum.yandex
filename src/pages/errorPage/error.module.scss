@@ -1,0 +1,22 @@
+ @use '../../styles/mixins.module' as mixins;
+
+.wrapper{
+  @include mixins.contentCenterWrapper;
+
+}
+
+.container{
+  @include mixins.contentCenterContainer;
+}
+
+.erCode{
+  @include mixins.errPage_erCode;
+}
+
+.erMessage{
+  @include mixins.errPage_erMessage;
+}
+
+.linkBack{
+  @include mixins.errPage_linkBack;
+}
