@@ -1,0 +1,35 @@
+@use "src/styles/colors.module" as colors;
+
+.wrapper {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #EAEAEA;
+  font-size: 13px;
+  font-weight: 500;
+
+  p{
+    white-space: nowrap;
+  }
+
+  input {
+    width: 100%;
+    text-align: end;
+    margin-left: 20px;
+    background: #fff;
+    color: black;
+    flex-grow: 1;
+   cursor: pointer;
+
+
+    &:disabled {
+     color: colors.$secondaryColOR;
+     cursor: inherit;
+    }
+  }
+}

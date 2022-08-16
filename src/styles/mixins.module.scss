@@ -1,0 +1,27 @@
+@mixin contentCenterWrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin contentCenterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin errPage_erCode {
+  font-weight: 500;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
+@mixin errPage_erMessage {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+@mixin errPage_linkBack {
+padding-top: 6vh;
+}
