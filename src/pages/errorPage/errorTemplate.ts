@@ -1,4 +1,4 @@
-import styles from '/src/pages/errorPage/error.module.scss';
+import styles from './error.module.scss';
 
 export const errorTemplate=`<div class="${styles.wrapper}">
     <div class="${styles.container}">
