@@ -1,5 +1,4 @@
 import * as Handlebars from 'handlebars';
-// const Handlebars =require('handlebars');
 import {errorTemplate} from './errorTemplate';
 import {RenderUtils} from '../../utils/renderUtils';
 
