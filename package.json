@@ -4,6 +4,7 @@
   "description": "---",
   "scripts": {
     "dev": "parcel index.hbs",
+    "build": "parcel index.hbs",
     "start": "node app"
   },
   "repository": {
