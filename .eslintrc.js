@@ -15,7 +15,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   'rules': {
-    'linebreak-style': 0,
+    'linebreak-style': 1,
     'require-jsdoc': 0,
     'max-len': [2, {'code': 100}],
     'no-unused-vars': 1,

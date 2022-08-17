@@ -1,9 +1,9 @@
-type message={
-    ownerId:number,
-    text:string,
-    data:string,
+type message = {
+  ownerId: number,
+  text: string,
+  data: string,
 }
 
-type chat ={
-title:string
+type chat = {
+  title: string
 }
