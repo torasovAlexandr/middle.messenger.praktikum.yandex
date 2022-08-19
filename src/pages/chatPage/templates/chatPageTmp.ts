@@ -8,9 +8,10 @@ type props={
  messages?:any[];
 }
 
-export const chatPageTmp =({messages, chats}:props)=> `
+export const chatPageTmp =({messages}:props)=> `
     <main>
         ${chatMenu}
         ${messages? chat : noChatPlug()}
     </main>
 `;
+
