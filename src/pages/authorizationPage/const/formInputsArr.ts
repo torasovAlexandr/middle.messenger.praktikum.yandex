@@ -16,4 +16,3 @@ export const singUpFields:input[]=[
   {name: 'rePassword', type: 'password', label: 'Пароль (ещё раз)'},
 ];
 
-

@@ -2,7 +2,7 @@ import {avatar} from './avatar';
 import {userData} from './userData';
 import styles from './userContainer.module.scss';
 import {userMenu} from './userMenu';
-import {userFields, passwordFields} from '../const/formInputsArr';
+import {userFields} from '../const/formInputsArr';
 
 export const userContainer = `
 <div class="${styles.wrapper}">
@@ -12,4 +12,3 @@ export const userContainer = `
         ${userMenu}
     </div>
 </div>`;
-
