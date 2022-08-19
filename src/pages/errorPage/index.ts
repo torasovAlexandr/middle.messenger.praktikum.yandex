@@ -12,4 +12,3 @@ export const errorPage=(props:props)=>{
   const template= Handlebars.compile(errorTemplate);
   return RenderUtils.createContainer(template(props));
 };
-

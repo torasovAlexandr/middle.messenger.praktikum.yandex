@@ -12,3 +12,4 @@ export const userPage = (props: props) => {
   const template = Handlebars.compile(userPAge);
   return RenderUtils.createContainer(template(props));
 };
+

@@ -8,14 +8,15 @@ export const formTemplate = (inputs: input[]) => {
         <h1>{{formTitle}}</h1>
         ${inputs.reduce((prev, cur) => {
     return prev +
-        `<div class="${styles.formInput}">
+        `
+        <div class="${styles.formInput}">
             <p>${cur.label}</p>
             <input type="${cur.type}" name="${cur.name}">
-            </div>`;
+        </div>
+        `;
   }, '')}
-    <button class="${styles.sbmButton}" type="submit">{{submitBtnText}}</button>
-    <a href="{{bottomLink}}">{{bottomLinkText}}</a>
-</form>
-
+        <button class="${styles.sbmButton}" type="submit">{{submitBtnText}}</button>
+        <a href="{{bottomLink}}">{{bottomLinkText}}</a>
+    </form>
 </div>`;
 };
