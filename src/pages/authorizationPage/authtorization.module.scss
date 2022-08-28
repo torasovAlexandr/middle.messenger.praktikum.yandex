@@ -1,0 +1,60 @@
+@use "src/styles/mixins.module" as mixins;
+@use '../../styles/colors.module' as colors;
+
+.wrapper {
+  @include mixins.contentCenterWrapper;
+}
+
+.container {
+  @include mixins.contentCenterContainer;
+  padding: 50px 30px 30px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  border-radius: 12px;
+  min-height: 450px;
+
+  h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+
+  a {
+    color: colors.$mainColor;
+  }
+}
+
+.formInput {
+  box-sizing: border-box;
+  min-width: 340px;
+  color: colors.$secondaryColOR;
+  font-weight: 500;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid colors.$mainColor;
+
+  p {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  input {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+.sbmButton {
+  width: 100%;
+  color: #fff;
+  background: colors.$mainColor;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color .3s ease;
+  margin-top: auto;
+  margin-bottom: 14px;
+
+  &:hover {
+    background: darken(colors.$mainColor, 10%);
+  }
+}

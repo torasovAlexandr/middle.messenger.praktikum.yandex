@@ -1,0 +1,28 @@
+@use "src/styles/colors.module" as colors;
+
+.wrapper{
+  width: 100%;
+
+
+
+  .container{
+    padding: 10px 0;
+    border-bottom: 1px solid #EAEAEA;
+    font-size: 13px;
+    font-weight: 500;
+    color: colors.$mainColor;
+    cursor: pointer;
+    transition: color .3s ease;
+
+    &:hover{
+      color: darken(colors.$mainColor, 20%);
+    }
+  }
+  div:last-of-type{
+    color: red;
+    &:hover{
+      color: darken(red, 10%);
+    }
+  }
+}
+
