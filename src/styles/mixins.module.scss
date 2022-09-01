@@ -11,17 +11,17 @@
   align-items: center;
 }
 
-@mixin errPage_erCode {
+@mixin errPageErCode {
   font-weight: 500;
   font-size: 40px;
   padding-bottom: 20px;
 }
 
-@mixin errPage_erMessage {
+@mixin errPageErMessage {
   font-weight: 500;
   font-size: 20px;
 }
 
-@mixin errPage_linkBack {
+@mixin errPageLinkBack {
 padding-top: 6vh;
 }

@@ -1,6 +1,19 @@
 {
+  "target": "es5",
+  "lib": [
+    "dom",
+    "dom.iterable",
+    "esnext"
+  ],
+
   "compilerOptions": {
+    "target": "es5",
     "experimentalDecorators": true,
-    "jsxImportSource": "preact"
+    "jsxImportSource": "preact",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "strictNullChecks": true
   }
 }

@@ -1,8 +1,10 @@
 @use "src/styles/mixins.module" as mixins;
 @use 'src/styles/colors.module' as colors;
+@use "sass:color";
 
 .wrapper {
   @include mixins.contentCenterWrapper;
+
   padding: 0 18px;
   background: #FBFBFB;
 }
@@ -18,7 +20,8 @@
   background: colors.$mainColor;
   color: #fff;
   transition: color .3s ease;
+
   &:hover{
-    background: darken(colors.$mainColor, 10%);
+    background: color.adjust(colors.$mainColor, $lightness: -10%);
   }
 }

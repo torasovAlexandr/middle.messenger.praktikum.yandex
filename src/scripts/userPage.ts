@@ -1,6 +1,10 @@
-import {userPage} from '../pages/userPage';
+import {UserPage} from '../pages/userPage';
 
+const root = document.querySelector('#root');
 
-const root= document.querySelector('#root');
-const pageUser=userPage({userName: 'Иван'});
-root.append(pageUser);
+const pageSignIn = new UserPage({userName: 'Иван'});
+
+const contend = pageSignIn.getContent();
+if (root && contend) root.append(contend);
+
+pageSignIn.dispatchComponentDidMount();
