@@ -1,0 +1,16 @@
+.wrapper {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.input {
+  background: #EFEFEF;
+  border-radius: 5px;
+  width: 290px;
+  height: 32px;
+  padding: 10px;
+
+  &::placeholder {
+    text-align: center;
+  }
+}

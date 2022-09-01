@@ -1,0 +1,15 @@
+.wrapper{
+  display: flex;
+  height: 100vh;
+}
+
+.menu{
+  padding: 0 10px;
+  max-width: 310px;
+  border-right: 2px solid #EAEAEA;
+}
+
+.container{
+  flex-grow: 1;
+  padding: 0 20px;
+}

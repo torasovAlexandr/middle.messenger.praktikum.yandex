@@ -1,0 +1,18 @@
+@use "src/styles/colors.module" as colors;
+@use "sass:color";
+
+.wrapper {
+  padding: 21px 0 23px;
+  width: 290px;
+  text-align: end;
+}
+
+.link {
+  color: colors.$secondaryColOR;
+  font-weight: 500;
+  font-size: 12px;
+
+  &:hover {
+    color: color.adjust(colors.$secondaryColOR, $lightness: -10%);
+  }
+}

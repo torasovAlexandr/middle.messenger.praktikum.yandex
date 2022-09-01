@@ -1,5 +1,6 @@
 @use "src/styles/mixins.module" as mixins;
 @use '../../styles/colors.module' as colors;
+@use "sass:color";
 
 .wrapper {
   @include mixins.contentCenterWrapper;
@@ -7,8 +8,9 @@
 
 .container {
   @include mixins.contentCenterContainer;
+
   padding: 50px 30px 30px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 0 6px rgb(0 0 0 / 14%);
   border-radius: 12px;
   min-height: 450px;
 
@@ -17,6 +19,11 @@
     margin-bottom: 40px;
     font-weight: 500;
   }
+
+}
+
+.btnLink {
+  text-align: center;
 
   a {
     color: colors.$mainColor;
@@ -53,8 +60,9 @@
   transition: background-color .3s ease;
   margin-top: auto;
   margin-bottom: 14px;
+  text-align: center;
 
   &:hover {
-    background: darken(colors.$mainColor, 10%);
+    background: color.adjust(colors.$mainColor, $lightness: -10%);
   }
 }
