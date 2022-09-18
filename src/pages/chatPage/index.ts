@@ -16,7 +16,7 @@ export class ChatPage extends Block {
 
   init() {
     this.children = {
-      userLink: new UserLink({linkToUser: '/userPage.html'}),
+      userLink: new UserLink({linkToUser: '/userPageTemPlate.html'}),
       search: new Search({
         events: {
           input: (e) => {

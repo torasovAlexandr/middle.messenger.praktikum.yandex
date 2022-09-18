@@ -1,6 +1,6 @@
 import * as Handlebars from 'handlebars';
 import {RenderUtils} from '../../utils/renderUtils';
-import {userPAge} from './templates/userPAge';
+import {userPageTemPlate} from './templates/userPageTemPlate';
 import Block from '../../utils/Block';
 import {SideMenu} from './components/sideMenu';
 
@@ -10,7 +10,7 @@ type props = {
 };
 
 export const userPage = (props: props) => {
-  const template = Handlebars.compile(userPAge);
+  const template = Handlebars.compile(userPageTemPlate);
   return RenderUtils.createContainer(template(props));
 };
 
@@ -26,6 +26,6 @@ export class UserPage extends Block {
   }
 
   render() {
-    return this.compile(userPAge, this.props);
+    return this.compile(userPage, this.props);
   }
 }
