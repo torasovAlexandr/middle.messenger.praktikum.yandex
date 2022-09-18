@@ -8,7 +8,7 @@ const page400 = new ErrorPage({
   link: '/',
 });
 
-const contend = page400.getContent();
+const content = page400.getContent();
 if (root && contend) root.append(contend);
 
 page400.dispatchComponentDidMount();
