@@ -1,7 +1,14 @@
-import {errorPage} from '../pages/errorPage';
+import {ErrorPage} from '../pages/errorPage';
 
+const root = document.querySelector('#root');
 
-const root= document.querySelector('#root');
-const page400=errorPage({errorMessage: 'Не туда попали', errorCode: '400', link: '/'});
+const page400 = new ErrorPage({
+  errorMessage: 'Не туда попали',
+  errorCode: '400',
+  link: '/',
+});
 
-root.append(page400);
+const content = page400.getContent();
+if (root && contend) root.append(contend);
+
+page400.dispatchComponentDidMount();

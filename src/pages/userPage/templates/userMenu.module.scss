@@ -1,27 +1,29 @@
 @use "src/styles/colors.module" as colors;
+@use "sass:color";
 
-.wrapper{
+.wrapper {
   width: 100%;
 
 
-
-  .container{
+  .container {
     padding: 10px 0;
-    border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1px solid colors.$grey;
     font-size: 13px;
     font-weight: 500;
     color: colors.$mainColor;
     cursor: pointer;
     transition: color .3s ease;
 
-    &:hover{
-      color: darken(colors.$mainColor, 20%);
+    &:hover {
+      color:  color.adjust(colors.$mainColor, $lightness: -20%);
     }
   }
-  div:last-of-type{
+
+  div:last-of-type {
     color: red;
-    &:hover{
-      color: darken(red, 10%);
+
+    &:hover {
+      color:  color.adjust(red, $lightness: -10%);
     }
   }
 }

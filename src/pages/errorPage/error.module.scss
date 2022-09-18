@@ -10,13 +10,13 @@
 }
 
 .erCode{
-  @include mixins.errPage_erCode;
+  @include mixins.errPageErCode;
 }
 
 .erMessage{
-  @include mixins.errPage_erMessage;
+  @include mixins.errPageErMessage;
 }
 
 .linkBack{
-  @include mixins.errPage_linkBack;
+  @include mixins.errPageLinkBack;
 }

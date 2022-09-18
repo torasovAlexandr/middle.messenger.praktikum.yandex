@@ -1,14 +1,25 @@
-import {authorizationPage} from '../pages/authorizationPage';
-import {singUpFields} from '../pages/authorizationPage/const/formInputsArr';
+import {AuthorizationPage} from '../pages/authorizationPage';
+import {
+  loginFieldsFormValidate,
+  singUpFields,
+} from '../pages/authorizationPage/const/formInputsArr';
+import {Validate} from '../utils/Validate';
 
+const root = document.querySelector('#root');
 
-const root= document.querySelector('#root');
-const pageSignIn=authorizationPage({
+const pageSignIn = new AuthorizationPage({
   formTitle: 'Регистрация',
   formId: 'signInForm',
   submitBtnText: 'Авторизоваться',
   bottomLink: '/',
   bottomLinkText: 'Нет аккаунта?',
   fields: singUpFields,
+  events: {
+    submit: Validate.formSubmitCheck(loginFieldsFormValidate),
+  },
 });
-root.append(pageSignIn);
+
+const contend = pageSignIn.getContent();
+if (root && contend) root.append(contend);
+
+pageSignIn.dispatchComponentDidMount();
