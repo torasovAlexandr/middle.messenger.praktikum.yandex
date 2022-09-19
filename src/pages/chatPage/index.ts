@@ -7,11 +7,11 @@ import {ChatList} from './container/chatList';
 import {ChatsMock} from './container/chatList/mock/chatsMock';
 import {messageMock} from './container/chat/mock/message';
 
-type props = {};
+// type props = {};
 
 export class ChatPage extends Block {
-  constructor(props: props) {
-    super('div', props);
+  constructor() {
+    super();
   }
 
   init() {
