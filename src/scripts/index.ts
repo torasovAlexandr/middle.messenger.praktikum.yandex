@@ -5,7 +5,7 @@ import {Page404} from '../pages/page404';
 import {Page500} from '../pages/Page500';
 import {SignUpPage} from '../pages/signUpPage';
 import {SingInPage} from '../pages/singInPage';
-import {UserPages} from '../pages/userPages';
+import {UserPage} from '../pages/userPage';
 
 enum Routes {
   Index = '/',
@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     .use(Routes.error, Page500)
     .use(Routes.signIn, SingInPage)
     .use(Routes.signUp, SignUpPage)
-    .use(Routes.user, UserPages);
+    .use(Routes.user, UserPage);
 
   let isProtectedRoute = true;
 

@@ -1,22 +1,15 @@
-import * as Handlebars from 'handlebars';
-import {RenderUtils} from '../../utils/renderUtils';
 import {userPageTemPlate} from './templates/userPageTemPlate';
 import Block from '../../utils/Block';
 import {SideMenu} from './components/sideMenu';
 
-type props = {
-  avatarSrc?: string;
-  userName?: string;
-};
-
-export const userPage = (props: props) => {
-  const template = Handlebars.compile(userPageTemPlate);
-  return RenderUtils.createContainer(template(props));
-};
+// type props = {
+//   avatarSrc?: string;
+//   userName?: string;
+// };
 
 export class UserPage extends Block {
-  constructor(props: props) {
-    super('div', props);
+  constructor() {
+    super('div');
   }
 
   init() {
@@ -26,6 +19,6 @@ export class UserPage extends Block {
   }
 
   render() {
-    return this.compile(userPage, this.props);
+    return this.compile(userPageTemPlate, this.props);
   }
 }
