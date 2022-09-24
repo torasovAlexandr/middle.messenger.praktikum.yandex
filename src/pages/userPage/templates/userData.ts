@@ -9,18 +9,20 @@ type userField = {
 const userField = ({label, data, editMode, type, name}: userField) => `
 <div class="${styles.container}">
 <p>${label}</p>
-<input name="${name}" type="${type}" value="${data}" ${
+<input name="${name}" type="${type}" value="{{${data}}}" ${
   !editMode ? 'disabled' : ''
 } />
 </div>
 
-
+ 
 `;
 
-export const userData = (editMode: boolean, fields: input[]) => `
+export const userData = (editMode: boolean, fields: input[]) => {
+  return `
 <div class="${styles.wrapper}">
 ${fields.reduce((prev, cur) => {
-  const {label} = cur;
-  return prev + userField({...cur, editMode, data: label});
+  const {name} = cur;
+  return prev + userField({...cur, editMode, data: name});
 }, '')}
 </div>`;
+};

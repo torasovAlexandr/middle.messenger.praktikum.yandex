@@ -1,10 +1,12 @@
 import Block from '../utils/Block';
 import {AuthorizationPage} from '../containers/authContainer';
 import {
+  loginFields,
   loginFieldsFormValidate,
-  singUpFields,
 } from '../containers/authContainer/const/formInputsArr';
 import {Validate} from '../utils/Validate';
+import {SignupData} from '../api/AuthAPI';
+import AuthController from '../controllers/AuthController';
 
 export class SingInPage extends Block {
   constructor() {
@@ -14,14 +16,21 @@ export class SingInPage extends Block {
   protected init() {
     this.children = {
       content: new AuthorizationPage({
-        formTitle: 'Регистрация',
+        formTitle: 'Вход',
         formId: 'signInForm',
         submitBtnText: 'Авторизоваться',
         bottomLink: '/',
         bottomLinkText: 'Нет аккаунта?',
-        fields: singUpFields,
+        fields: loginFields,
         events: {
-          submit: Validate.formSubmitCheck(loginFieldsFormValidate),
+          submit: (data) => {
+            const validData = Validate.formSubmitCheck(loginFieldsFormValidate)(
+              data
+            ) as SignupData | undefined;
+            if (validData) {
+              AuthController.signin(validData).then((res) => console.log(res));
+            }
+          },
         },
       }),
     };

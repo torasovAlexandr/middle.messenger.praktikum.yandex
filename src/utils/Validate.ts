@@ -78,6 +78,8 @@ export class Validate {
 
   static formSubmitCheck = (validate?: [string, inputValid][]) => {
     return (e: SubmitEvent) => {
+      const data: {[key: string]: any} | undefined = {};
+      let valid = true;
       e.preventDefault();
       e.stopPropagation();
       const target = e.target as HTMLFormElement;
@@ -86,14 +88,25 @@ export class Validate {
 
       validate?.forEach((el) => {
         const value = formData.get(el[0]);
+        data[el[0]] = value;
         if (typeof value === 'string') {
           const noValid = el[1](value);
-          if (noValid) console.log(noValid);
-        } else console.log(`Ошибка в поле ${el[0]}`);
+          if (noValid) {
+            console.log(noValid);
+            valid = false;
+          }
+        } else {
+          console.log(`Ошибка в поле ${el[0]}`);
+          valid = false;
+        }
       });
       formData.forEach((el) => {
         console.log(el);
       });
+      if (valid) {
+        return data;
+      }
+      return;
     };
   };
 }

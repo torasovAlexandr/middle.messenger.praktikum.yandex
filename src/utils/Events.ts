@@ -3,7 +3,6 @@ import {inputValid} from '../types/utilsTypes';
 export class Events {
   static inputFocusOut = (validateFn: inputValid) => {
     return (e: FocusEvent) => {
-      console.log('bla');
       e.stopPropagation();
       const tar = e.target as HTMLInputElement;
       const value = tar.value;

@@ -1,11 +1,14 @@
 import Router from '../utils/Router';
-import {ChatPage} from '../pages/chatPage';
+import ChatPage from '../pages/chatPage';
 import AuthController from '../controllers/AuthController';
 import {Page404} from '../pages/page404';
 import {Page500} from '../pages/Page500';
 import {SignUpPage} from '../pages/signUpPage';
 import {SingInPage} from '../pages/singInPage';
-import {UserPage} from '../pages/userPage';
+import UserPage from '../pages/userPage';
+// import ChatController from '../controllers/ChatController';
+
+// @ts-ignore
 
 enum Routes {
   Index = '/',
@@ -43,7 +46,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     Router.start();
 
     if (!isProtectedRoute) {
-      Router.go(Routes.notFound);
+      Router.go(Routes.user);
     }
   } catch (e) {
     Router.start();
@@ -51,5 +54,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (isProtectedRoute) {
       Router.go(Routes.Index);
     }
+    Router.go('/user');
+    Router.back();
   }
 });
