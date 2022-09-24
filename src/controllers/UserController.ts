@@ -1,4 +1,4 @@
-import API, {updateUserDto, UserApi} from '../api/UserApi';
+import API, {updateUserDto, UserApi, userPasswordDto} from '../api/UserApi';
 import AuthController from './AuthController';
 
 export class UserController {
@@ -15,6 +15,11 @@ export class UserController {
 
   async updateAvatar(data: any) {
     await this.api.updateAvatar(data);
+    AuthController.fetchUser();
+  }
+
+  async updatePassword(data: userPasswordDto) {
+    await this.api.updatePassword(data);
     AuthController.fetchUser();
   }
 }
