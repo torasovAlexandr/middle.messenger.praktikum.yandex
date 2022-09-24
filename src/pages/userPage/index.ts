@@ -46,8 +46,6 @@ export class UserPage extends Block {
               const formData = new FormData();
               // @ts-ignore
               formData.append('avatar', e.target[0].files[0]);
-              console.log(formData.get('sss'));
-              console.dir(formData);
               UserController.updateAvatar(formData);
             }
           },

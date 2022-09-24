@@ -9,6 +9,11 @@ export type updateUserDto = {
   phone: string;
 };
 
+export type userPasswordDto = {
+  oldPassword: string;
+  newPassword: string;
+};
+
 export class UserApi extends BaseAPI {
   constructor() {
     super('/user');
@@ -20,6 +25,10 @@ export class UserApi extends BaseAPI {
 
   updateUser(data: updateUserDto) {
     return this.http.post('/profile', data);
+  }
+
+  updatePassword(data: userPasswordDto) {
+    return this.http.post('/password', data);
   }
 
   update = undefined;

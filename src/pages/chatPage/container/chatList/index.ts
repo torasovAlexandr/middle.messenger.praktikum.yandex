@@ -3,6 +3,10 @@ import {template} from './template';
 import {ChatListItem} from '../../components/chatListItem';
 
 import CharsApi, {Chat} from '../../../../api/CharsApi';
+import {NewChat} from '../../components/newChat';
+import {Validate} from '../../../../utils/Validate';
+import ChatController from '../../../../controllers/ChatController';
+import {titleValidate} from '../../components/newChat/validate';
 
 type props = {
   chatList: {[key: string]: Chat};
@@ -29,7 +33,21 @@ export class ChatList extends block {
       });
     });
 
-    this.children = {...res};
+    this.children = {
+      ...res,
+      newChat: new NewChat({
+        events: {
+          submit: (data) => {
+            const validData = Validate.formSubmitCheck(titleValidate)(data) as {
+              title: string;
+            };
+            if (validData) {
+              ChatController.createChat(validData);
+            }
+          },
+        },
+      }),
+    };
   }
 
   render() {

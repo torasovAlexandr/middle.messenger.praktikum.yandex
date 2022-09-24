@@ -18,6 +18,12 @@ export type Chat = {
     content: string;
   };
 };
+
+export type chatAdd = {
+  users: number[];
+  chatId: number;
+};
+
 export class CharsApi extends BaseAPI {
   constructor() {
     super('/chats');
@@ -27,13 +33,20 @@ export class CharsApi extends BaseAPI {
     return this.http.get('/');
   }
 
-  create(): Promise<void> {
-    const title = new Date().toLocaleDateString();
-    return this.http.post('/', {title});
+  create(data: {title: string}): Promise<void> {
+    return this.http.post('/', data);
   }
 
   delete(chatId: number): Promise<unknown> {
     return this.http.delete('/', {chatId});
+  }
+
+  addUsersToChat(chatAdd: chatAdd) {
+    return this.http.put('/users', chatAdd);
+  }
+
+  removeUsersFromChat(chatAdd: chatAdd) {
+    return this.http.delete('/users', chatAdd);
   }
 
   update = undefined;

@@ -1,4 +1,4 @@
-import API, {CharsApi} from '../api/CharsApi';
+import API, {CharsApi, chatAdd} from '../api/CharsApi';
 import store from '../utils/Store';
 
 export class ChatController {
@@ -18,15 +18,24 @@ export class ChatController {
     }
   }
 
-  async createChat() {
-    await this.api.create();
+  async createChat(data: {title: string}) {
+    await this.api.create(data);
     this.fetchChats();
   }
 
   async deleteChat(chatId: number) {
     await this.api.delete(chatId);
     this.fetchChats();
-    console.log(212);
+  }
+
+  async addUsersToChat(chatAdd: chatAdd) {
+    await this.api.addUsersToChat(chatAdd);
+    this.fetchChats();
+  }
+
+  async removeUsersFromChat(chatAdd: chatAdd) {
+    await this.api.removeUsersFromChat(chatAdd);
+    this.fetchChats();
   }
 }
 
