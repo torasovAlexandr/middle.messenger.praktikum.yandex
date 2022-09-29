@@ -5,7 +5,7 @@ export class UserController {
   private readonly api: UserApi;
 
   constructor() {
-    this.api = API;
+    this.userAPI = new UserAPI();
   }
 
   async updateUser(data: updateUserDto) {
