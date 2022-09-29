@@ -16,4 +16,19 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 21px;
+
+
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+
+  & button{
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
 }

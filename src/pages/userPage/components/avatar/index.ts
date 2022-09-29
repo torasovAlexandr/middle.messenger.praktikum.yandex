@@ -1,18 +1,18 @@
 import Block from '../../../../utils/Block';
-import {sideMenu} from './template';
+import {avatar} from './template';
 
 type props = {
   events?: {
-    click?: () => void;
+    submit?: (e: any) => void;
   };
 };
 
-export class SideMenu extends Block {
+export class Avatar extends Block {
   constructor(props: props) {
     super('div', props);
   }
 
   render() {
-    return this.compile(sideMenu, this.props);
+    return this.compile(avatar, this.props);
   }
 }

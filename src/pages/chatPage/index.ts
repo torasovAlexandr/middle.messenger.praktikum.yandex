@@ -4,14 +4,16 @@ import {UserLink} from './components/userLink';
 import {Search} from './components/search';
 import {Chat} from './container/chat';
 import {ChatList} from './container/chatList';
-import {ChatsMock} from './container/chatList/mock/chatsMock';
 import {messageMock} from './container/chat/mock/message';
+import {withStore} from '../../utils/Store';
+import ChatController from '../../controllers/ChatController';
 
-type props = {};
+// type props = {};
 
 export class ChatPage extends Block {
-  constructor(props: props) {
-    super('div', props);
+  constructor(pops: any) {
+    console.log(pops);
+    super('div', pops);
   }
 
   init() {
@@ -26,7 +28,7 @@ export class ChatPage extends Block {
         },
       }),
       chat: new Chat({messages: messageMock, companion: {name: 'VasserMan'}}),
-      chatList: new ChatList({chatList: ChatsMock}),
+      chatList: new ChatList({chatList: this.props}),
     };
   }
 
@@ -34,3 +36,13 @@ export class ChatPage extends Block {
     return this.compile(template, this.props);
   }
 }
+
+export default (() => {
+  try {
+    ChatController.fetchChats();
+  } catch (e) {
+    console.log(e);
+  }
+
+  return withStore((state) => ({...state.chats}))(ChatPage);
+})();
