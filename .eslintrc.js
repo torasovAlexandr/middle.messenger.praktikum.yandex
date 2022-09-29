@@ -13,7 +13,7 @@ module.exports = {
   rules: {
     'linebreak-style': 1,
     'require-jsdoc': 0,
-    'max-len': [2, {code: 100}],
+    'max-len': [2, {code: 100, ignoreComments: true}],
     'no-unused-vars': 1,
     camelcase: 'off',
     'valid-jsdoc': 'off',
