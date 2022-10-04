@@ -1,6 +1,6 @@
 // Express уже установлен, можно пользоваться
 const express = require('express');
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 // Здесь нужно написать роут для отдачи статики
