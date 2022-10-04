@@ -1,5 +1,6 @@
 // Express уже установлен, можно пользоваться
 const express = require('express');
+const path = require('path');
 const PORT = process.env.PORT || 3000;
 const app = express();
 
@@ -7,6 +8,9 @@ const app = express();
 // Все пути считаются относительно переменной __dirname
 // Подробнее про __dirname можно прочитать здесь https://nodejs.org/api/modules.html#modules_dirname
 app.use(express.static(`${__dirname}/dist`));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/dist/index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`Project start at ${PORT}`);
