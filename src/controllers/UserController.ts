@@ -1,11 +1,12 @@
-import API, {updateUserDto, UserApi, userPasswordDto} from '../api/UserApi';
+import {updateUserDto, UserApi, userPasswordDto} from '../api/UserApi';
 import AuthController from './AuthController';
 
 export class UserController {
   private readonly api: UserApi;
+  userAPI: any;
 
   constructor() {
-    this.userAPI = new UserAPI();
+    this.userAPI = new UserApi();
   }
 
   async updateUser(data: updateUserDto) {

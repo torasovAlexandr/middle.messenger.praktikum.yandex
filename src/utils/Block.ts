@@ -1,6 +1,7 @@
 import {EventBus} from './EventBus';
 import {nanoid} from 'nanoid';
-import * as Handlebars from 'handlebars';
+// @ts-ignore
+import * as Handlebars from './handlebars-v4.7.7.js';
 
 // Нельзя создавать экземпляр данного класса
 class Block {

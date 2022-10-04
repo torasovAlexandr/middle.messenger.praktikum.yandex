@@ -1,11 +1,12 @@
-import Router from '../utils/Router';
-import ChatPage from '../pages/chatPage';
-import AuthController from '../controllers/AuthController';
-import {Page404} from '../pages/page404';
-import {Page500} from '../pages/Page500';
-import {SignUpPage} from '../pages/signUpPage';
-import {SingInPage} from '../pages/singInPage';
-import UserPage from '../pages/userPage';
+import Router from './utils/Router';
+import ChatPage from './pages/chatPage';
+import AuthController from './controllers/AuthController';
+import {Page404} from './pages/page404';
+import {Page500} from './pages/Page500';
+import {SignUpPage} from './pages/signUpPage';
+import {SingInPage} from './pages/singInPage';
+import UserPage from './pages/userPage';
+import './index.css';
 // import ChatController from '../controllers/ChatController';
 
 // @ts-ignore
