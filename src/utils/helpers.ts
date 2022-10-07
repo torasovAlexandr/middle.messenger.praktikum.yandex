@@ -3,7 +3,7 @@ export type Indexed<T = any> = {
 };
 
 export function merge(lhs: Indexed, rhs: Indexed): Indexed {
-  for (let p in rhs) {
+  for (const p in rhs) {
     if (!rhs.hasOwnProperty(p)) {
       continue;
     }
@@ -22,7 +22,11 @@ export function merge(lhs: Indexed, rhs: Indexed): Indexed {
   return lhs;
 }
 
-export function set(object: Indexed | unknown, path: string, value: unknown): Indexed | unknown {
+export function set(
+  object: Indexed | unknown,
+  path: string,
+  value: unknown
+): Indexed | unknown {
   if (typeof object !== 'object' || object === null) {
     return object;
   }
@@ -31,9 +35,12 @@ export function set(object: Indexed | unknown, path: string, value: unknown): In
     throw new Error('path must be string');
   }
 
-  const result = path.split('.').reduceRight<Indexed>((acc, key) => ({
-    [key]: acc,
-  }), value as any);
+  const result = path.split('.').reduceRight<Indexed>(
+    (acc, key) => ({
+      [key]: acc,
+    }),
+    value as any
+  );
 
   return merge(object as Indexed, result);
 }

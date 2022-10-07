@@ -40,7 +40,10 @@ npm start
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Stylelint](https://stylelint.io/)
-- [netlify](https://app.netlify.com/)
+- [heroku](https://www.heroku.com/)
+- [Mocha](https://mochajs.org/)
+- [husky](https://github.com/typicode/husky)
+
 
 
 ## Developers
