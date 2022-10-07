@@ -3,11 +3,11 @@
 Another student messenger
 Now in developing
 
-## Link to example at netlify
+## Link to example at heroku
 
 <a name="links"></a>
 
-- [chat](https://dapper-mochi-a71b33.netlify.app/)
+- [chat](https://chat-apptoras.herokuapp.com/)
 
 ## Install
 
