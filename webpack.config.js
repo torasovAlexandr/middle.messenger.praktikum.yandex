@@ -11,10 +11,6 @@ const cssLoaders = (extra) => {
   const loaders = [
     {
       loader: MiniCssExtractPlugin.loader,
-      // options: {
-      //   hmr: isDev,
-      //   reloadAll: true,
-      // },
     },
     'css-loader',
   ];
@@ -26,35 +22,16 @@ const cssLoaders = (extra) => {
   return loaders;
 };
 
-const plugins = () => {
-  const base = [
-    new HTMLWebpackPlugin({
-      template: './index.html',
-      // minify: {
-      //   collapseWhitespace: isProd,
-      // },
-    }),
-    new CleanWebpackPlugin(),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve(__dirname, 'src/favicon.ico'),
-    //       to: path.resolve(__dirname, 'dist')
-    //     }
-    //   ]
-    // }),
+const plugins = [
+  new HTMLWebpackPlugin({
+    template: './index.html',
+  }),
+  new CleanWebpackPlugin(),
 
-    new MiniCssExtractPlugin({
-      filename: filename('css'),
-    }),
-  ];
-
-  // if (isProd) {
-  //   base.push(new BundleAnalyzerPlugin());
-  // }
-
-  return base;
-};
+  new MiniCssExtractPlugin({
+    filename: filename('css'),
+  }),
+];
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -69,9 +46,6 @@ module.exports = {
     fallback: {
       fs: false,
     },
-    // alias: {
-    //   handlebars: 'handlebars/dist/handlebars.js',
-    // },
   },
 
   devServer: {
@@ -82,7 +56,7 @@ module.exports = {
     port: 9000,
   },
 
-  plugins: plugins(),
+  plugins: plugins,
   module: {
     rules: [
       {
