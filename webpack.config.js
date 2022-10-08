@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+// const HandlebarsPlugin = require('handlebars-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
@@ -10,6 +11,10 @@ const cssLoaders = (extra) => {
   const loaders = [
     {
       loader: MiniCssExtractPlugin.loader,
+      // options: {
+      //   hmr: isDev,
+      //   reloadAll: true,
+      // },
     },
     'css-loader',
   ];
@@ -21,16 +26,20 @@ const cssLoaders = (extra) => {
   return loaders;
 };
 
-const plugins = () => [
-  new HTMLWebpackPlugin({
-    template: './index.html',
-  }),
-  new CleanWebpackPlugin(),
+const plugins = () => {
+  const base = [
+    new HTMLWebpackPlugin({
+      template: './index.html',
+    }),
+    new CleanWebpackPlugin(),
 
-  new MiniCssExtractPlugin({
-    filename: filename('css'),
-  }),
-];
+    new MiniCssExtractPlugin({
+      filename: filename('css'),
+    }),
+  ];
+
+  return base;
+};
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
