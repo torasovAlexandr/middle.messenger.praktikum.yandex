@@ -2,7 +2,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-// const HandlebarsPlugin = require('handlebars-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
@@ -22,7 +21,7 @@ const cssLoaders = (extra) => {
   return loaders;
 };
 
-const plugins = [
+const plugins = () => [
   new HTMLWebpackPlugin({
     template: './index.html',
   }),
@@ -56,7 +55,7 @@ module.exports = {
     port: 9000,
   },
 
-  plugins: plugins,
+  plugins: plugins(),
   module: {
     rules: [
       {
