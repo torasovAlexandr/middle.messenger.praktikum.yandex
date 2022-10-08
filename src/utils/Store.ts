@@ -12,7 +12,9 @@ export class Store extends EventBus {
   public set(keypath: string, data: unknown) {
     set(this.state, keypath, data);
 
-    this.emit(StoreEvents.Updated, this.getState());
+    try {
+      this.emit(StoreEvents.Updated, this.getState());
+    } catch (er) {}
   }
 
   public getState() {
@@ -21,6 +23,8 @@ export class Store extends EventBus {
 }
 
 const store = new Store();
+// @ts-ignore
+window.store = store;
 
 export function withStore(mapStateToProps: (state: any) => any) {
   return function wrap(Component: typeof Block) {

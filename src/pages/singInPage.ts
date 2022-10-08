@@ -19,7 +19,7 @@ export class SingInPage extends Block {
         formTitle: 'Вход',
         formId: 'signInForm',
         submitBtnText: 'Авторизоваться',
-        bottomLink: '/',
+        bottomLink: '/signup',
         bottomLinkText: 'Нет аккаунта?',
         fields: loginFields,
         events: {

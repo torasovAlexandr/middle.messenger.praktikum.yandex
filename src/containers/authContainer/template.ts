@@ -17,9 +17,7 @@ export const template = (inputs: input[]) => {
                 <button class="${
                   styles.sbmButton
                 }" type="submit">{{submitBtnText}}</button>
-               <div class=" ${
-                 styles.btnLink
-               }"><a href="{{bottomLink}}">{{bottomLinkText}}</a></div> 
+               <div class=" ${styles.btnLink}">{{{link}}}</div> 
     </form>
       
         

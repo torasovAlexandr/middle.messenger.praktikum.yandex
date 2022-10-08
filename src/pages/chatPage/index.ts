@@ -6,13 +6,12 @@ import {Chat} from './container/chat';
 import {ChatList} from './container/chatList';
 import {messageMock} from './container/chat/mock/message';
 import {withStore} from '../../utils/Store';
-import ChatController from '../../controllers/ChatController';
 
 // type props = {};
 
 export class ChatPage extends Block {
   constructor(pops: any) {
-    console.log(pops);
+    console.log('props');
     super('div', pops);
   }
 
@@ -38,11 +37,5 @@ export class ChatPage extends Block {
 }
 
 export default (() => {
-  try {
-    ChatController.fetchChats();
-  } catch (e) {
-    console.log(e);
-  }
-
   return withStore((state) => ({...state.chats}))(ChatPage);
 })();

@@ -7,11 +7,9 @@ import {SignUpPage} from './pages/signUpPage';
 import {SingInPage} from './pages/singInPage';
 import UserPage from './pages/userPage';
 import './index.css';
-// import ChatController from '../controllers/ChatController';
+import ChatController from './controllers/ChatController';
 
-// @ts-ignore
-
-enum Routes {
+export enum Routes {
   Index = '/',
   notFound = '/404',
   error = '/500',
@@ -43,19 +41,20 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   try {
     await AuthController.fetchUser();
+    await ChatController.fetchChats();
 
     Router.start();
 
+    Router.go(Routes.Index);
+
     if (!isProtectedRoute) {
-      Router.go(Routes.user);
+      // Router.go(Routes.signUp);
     }
   } catch (e) {
     Router.start();
 
     if (isProtectedRoute) {
-      Router.go(Routes.Index);
+      Router.go(Routes.signUp);
     }
-    Router.go('/user');
-    Router.back();
   }
 });

@@ -19,7 +19,7 @@ export class SignUpPage extends Block {
         formTitle: 'Регистрация',
         formId: 'logInForm',
         submitBtnText: 'Авторизоваться',
-        bottomLink: '/',
+        bottomLink: '/login',
         bottomLinkText: 'Нет аккаунта?',
         fields: singUpFields,
         events: {
@@ -40,14 +40,3 @@ export class SignUpPage extends Block {
     return this.compile(`{{{content}}}`, this.props);
   }
 }
-
-// onSubmit() {
-//   const values = Object
-//     .values(this.children)
-//     .filter(child => child instanceof Input)
-//     .map((child) => ([(child as Input).getName(), (child as Input).getValue()]))
-//
-//   const data = Object.fromEntries(values);
-//
-//   AuthController.signup(data as SignupData);
-// }

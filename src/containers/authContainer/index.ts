@@ -2,6 +2,8 @@ import {input} from '../../types/templateTypes';
 import Block from '../../utils/Block';
 import {AuthInput} from './components/authInput';
 import {template} from './template';
+import {Link} from '../../components/link';
+import Router from '../../utils/Router';
 
 type props = {
   formId: string;
@@ -27,7 +29,17 @@ export class AuthorizationPage extends Block {
       res[el[0]] = new AuthInput(el[1]);
     });
 
-    this.children = {...res};
+    this.children = {
+      ...res,
+      link: new Link({
+        text: this.props.bottomLinkText,
+        events: {
+          click: () => {
+            Router.go(this.props.bottomLink);
+          },
+        },
+      }),
+    };
   }
 
   render() {
