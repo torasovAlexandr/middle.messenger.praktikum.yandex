@@ -2,10 +2,11 @@ import Block from '../../utils/Block';
 import {template} from './template';
 import {UserLink} from './components/userLink';
 import {Search} from './components/search';
-import {Chat} from './container/chat';
+// import {Chat} from './container/chat';
 import {ChatList} from './container/chatList';
-import {messageMock} from './container/chat/mock/message';
+// import {messageMock} from './container/chat/mock/message';
 import {withStore} from '../../utils/Store';
+import {NavMenu} from '../../components/navMenu';
 
 // type props = {};
 
@@ -26,8 +27,9 @@ export class ChatPage extends Block {
           },
         },
       }),
-      chat: new Chat({messages: messageMock, companion: {name: 'VasserMan'}}),
+      // chat: new Chat({messages: messageMock, companion: {}}),
       chatList: new ChatList({chatList: this.props}),
+      navMenu: new NavMenu({}),
     };
   }
 

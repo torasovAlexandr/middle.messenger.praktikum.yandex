@@ -4,6 +4,7 @@ import {AuthInput} from './components/authInput';
 import {template} from './template';
 import {Link} from '../../components/link';
 import Router from '../../utils/Router';
+import {NavMenu} from '../../components/navMenu';
 
 type props = {
   formId: string;
@@ -39,6 +40,7 @@ export class AuthorizationPage extends Block {
           },
         },
       }),
+      navMenu: new NavMenu({}),
     };
   }
 

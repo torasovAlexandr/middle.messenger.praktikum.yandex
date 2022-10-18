@@ -17,7 +17,7 @@ export class Validate {
     if (longTest === 'toShort') return 'Слишком короткий логин';
     if (longTest === 'toLong') return 'Слишком длинный логин';
 
-    const letterTest = value.match(/[a-z]/i);
+    const letterTest = value.match(/[a-z]/gi);
     if (!letterTest) return 'В логине должна быть хотя бы одна буква';
 
     const regTest = value.match(/^[\w-]{3,20}$/);

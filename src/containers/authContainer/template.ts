@@ -3,7 +3,7 @@ import {input} from '../../types/templateTypes';
 
 export const template = (inputs: input[]) => {
   return ` 
-<div class="${styles.wrapper}">
+<div class="${styles.wrapper}"> {{{navMenu}}}
     <form action="" id="{{formId}}" class="${
       styles.container
     }" autocomplete="off">

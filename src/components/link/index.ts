@@ -4,7 +4,7 @@ import {template} from './template';
 type props = {
   text: string;
   events?: {
-    click?: () => void;
+    click?: (e: MouseEvent) => void;
   };
 };
 

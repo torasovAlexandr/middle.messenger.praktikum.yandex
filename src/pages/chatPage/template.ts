@@ -2,6 +2,7 @@ import styles from './style.module.scss';
 
 export const template = `
 <div class="${styles.wrapper}">
+{{{navMenu}}}
     <div class="${styles.menu}">
         {{{userLink}}}
         {{{search}}}

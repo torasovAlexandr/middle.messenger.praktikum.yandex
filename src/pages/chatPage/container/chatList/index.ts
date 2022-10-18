@@ -7,6 +7,8 @@ import {NewChat} from '../../components/newChat';
 import {Validate} from '../../../../utils/Validate';
 import ChatController from '../../../../controllers/ChatController';
 import {titleValidate} from '../../components/newChat/validate';
+import {Routes} from '../../../../index';
+import Router from '../../../../utils/Router';
 
 type props = {
   chatList: {[key: string]: Chat};
@@ -44,6 +46,8 @@ export class ChatList extends block {
             if (validData) {
               ChatController.createChat(validData);
             }
+            Router.go('404');
+            Router.go(Routes.Index);
           },
         },
       }),

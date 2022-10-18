@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     Router.start();
 
     if (isProtectedRoute) {
-      Router.go(Routes.signUp);
+      Router.go(Routes.notFound);
     }
   }
 });
