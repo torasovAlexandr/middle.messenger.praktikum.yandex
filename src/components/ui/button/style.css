@@ -1,0 +1,26 @@
+.button {
+  border: none;
+  background-color: #fff;
+  margin: 15px 0 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 6px #000;
+  border-radius: 12px;
+}
+
+button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button-group__row {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.button-group__row button {
+  margin: 15px 5px 10px;
+  width: 200px;
+}

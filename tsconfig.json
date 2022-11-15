@@ -1,19 +1,29 @@
 {
-  "target": "es5",
-  "lib": [
-    "dom",
-    "dom.iterable",
-    "esnext"
-  ],
-
+  "ts-node": {
+    "files": true
+  },
   "compilerOptions": {
-    "target": "es5",
-    "experimentalDecorators": true,
-    "jsxImportSource": "preact",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "outDir": "dist",
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
-    "strictNullChecks": true
-  }
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "lib": [
+      "es2019",
+      "dom",
+      "dom.iterable"
+    ]
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./index.d.ts"
+  ],
+  "exclude": [
+    "./node_modules",
+    "./dist"
+  ]
 }
