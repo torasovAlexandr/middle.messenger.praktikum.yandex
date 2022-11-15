@@ -1,6 +1,10 @@
-/node_modules
-/package-lock.json
-/.parcel-cache/
-/.idea/
+# IDE
+.idea
 
-/dist/
+# Vendor modules
+node_modules
+
+# Build
+dist
+
+.env
